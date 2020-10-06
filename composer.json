@@ -1,0 +1,22 @@
+{
+    "name": "abdallhsamy/helpers",
+    "description": "A Package contains some useful classes to help you develop faster",
+    "type": "project",
+    "require": {
+    },
+    "require-dev": {
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdallah Samy",
+            "email": "abdallhsamy2011@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "AbdallhSamy\\Helpers\\": "src/"
+        }
+    }
+}
