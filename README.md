@@ -14,8 +14,10 @@ and @param  `limit` for pagination
 
 ## installation
 
-using composer
+using Composer
+--------
 
-```
-composer require abdallhsamy/helpers
-```
+.. code-block:: bash
+
+    $ composer require abdallhsamy/helpers
+
