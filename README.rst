@@ -37,6 +37,7 @@ Add ``AbdallhSamy\Helpers\Providers\MigrationServiceProvider::class`` to your ap
         /**
          * Third Party Service Providers...
          */
+        AbdallhSamy\Helpers\Providers\HelperServiceProvider::class,
         AbdallhSamy\Helpers\Providers\MigrationServiceProvider::class,
     ]
 

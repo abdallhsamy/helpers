@@ -7,11 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class MigrationServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
     public function boot()
     {
         $this->loadMigrationsFrom($this->getMigrationFolders('migrations'));
@@ -28,14 +23,14 @@ class MigrationServiceProvider extends ServiceProvider
                     $folders[] = $folder . DIRECTORY_SEPARATOR . $subFolder;
                 }
             }
-
         }
-        // end of loop
+
         if ($path == 'migrations') {
             foreach ($folders as $index => $folder) {
                 $folders[$index] = $migrationPath . $folder;
             }
         }
+
         return $folders;
     }
 }

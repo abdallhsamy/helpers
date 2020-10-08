@@ -23,6 +23,14 @@ class HelperServiceProvider extends ServiceProvider
         }
     }
 
+    function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/helpers.php',
+            'helpers'
+        );
+    }
+
     /**
      * return existing migration file if found, else uses the current timestamp
      *
@@ -40,7 +48,7 @@ class HelperServiceProvider extends ServiceProvider
         return Collection::make($items)
             ->flatMap(function ($path) use ($filesystem, $fileName) {
                 return $filesystem->glob($path  . "*_{$fileName}");
-            })->push($this->app->databasePath() . "migrations/{$timestamp}_{$fileName}")
+            })->push($this->app->databasePath() . "/migrations/{$timestamp}_{$fileName}")
             ->first();
     }
 }
