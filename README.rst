@@ -8,10 +8,12 @@ benefits of using package
 ------
 
 * you will be able to move migration files to sub directories **ex**: ``database/migration/company/xxxxx_create_company_contacts_table.php``
-* use pagination , filter and search without modifing  controller methods or route params . **ex** : ``/api/v1/users/search=Abdallah&age=27&country_id=27&limit=15``
- which  @param ``search`` for search ,
- @param ``age`` for filtering
- @param ``country_id`` for filtering and @param  ``limit`` for pagination
+* use pagination , filter and search without modifing  controller methods or route params . **ex** : ``/api/v1/users/search=Abdallah%20Samy&age=27&country_id=27&limit=15``
+ which :
+  * @param ``search`` for search ,
+  * @param ``age`` for filtering
+  * @param ``country_id`` for filtering
+  * and @param  ``limit`` for pagination
 
 Installation
 =====
@@ -57,9 +59,12 @@ Then run migrations:
 Traits and Contracts
 --------------------
 
+Model
+-----
+
 Add ``AbdallhSamy\Helpers\Traits\Models\{ActivityLogTrait, ModelFilters, ModelSearch}`` traits to your model.
 
-See the following example:
+See the following model example:
 
 .. code-block:: php
 
@@ -73,9 +78,50 @@ See the following example:
 
         protected $filterItems = [];
         protected $searchItems = [];
-        
+
         ...
 
+Controller
+---------
 
+.. code-block
+
+<?php
+
+namespace App\Http\Controllers\API\V1;
+
+use App\Models\User;
+use App\Http\Controllers\Controller;
+use AbdallhSamy\Helpers\{Contracts\EnhancedQueryInterface, Traits\Controllers\EnhancedQuery};
+
+class UserAPIController extends Controller implements EnhancedQueryInterface
+{
+    use EnhancedQuery;
+
+    private $model;
+
+    public function __construct()
+    {
+        $this->model = User::latest();
+    }
+
+    /**
+    * must be implemented
+    */
+    public function collection($users)
+    {
+        return new VehicleCollection($users);
+    }
+
+    /**
+     * Display a listing of the resource.
+     * @param Request $request
+     * mixed
+     * @return mixed
+     */
+    public function index(Request $request)
+    {
+        return $this->queryResult($request->all());
+    }
 
 
