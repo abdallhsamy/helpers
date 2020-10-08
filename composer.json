@@ -1,7 +1,7 @@
 {
     "name": "abdallhsamy/helpers",
     "description": "A Package contains some useful classes to help you develop faster",
-    "type": "project",
+    "type": "library",
     "require": {
     },
     "require-dev": {
