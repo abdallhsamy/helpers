@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Database\{Migrations\Migration, Schema\Blueprint};
+use Illuminate\Support\Facades\Schema;
+
+class CreateActivityLogTable extends Migration
+{
+    public function up()
+    {
+        Schema::create(config('helpers.tables.activityLog'), function (Blueprint $table) {
+            $table->id();
+            $table->string('subject');
+            $table->string('url');
+            $table->string('method', 10);
+            $table->ipAddress('ip');
+            $table->string('agent')->nullable();
+            $table->foreignId('user_id')
+                ->nullable()
+                ->constrained(config('helpers.tables.user'))
+                ->onDelete('set null');
+            $table->timestamps();
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists(config('helpers.tables.activityLog'));
+    }
+}

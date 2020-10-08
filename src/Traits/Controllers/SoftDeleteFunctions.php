@@ -2,12 +2,11 @@
 
 namespace AbdallhSamy\Helpers\Traits\Controllers;
 
-use Illuminate\Http\Request;
+use AbdallhSamy\Helpers\Requests\SoftDeleteRequest;
 
 trait SoftDeleteFunctions
 {
-
-    public function destroy(Request $request)
+    public function destroy(SoftDeleteRequest $request)
     {
         foreach ($request->ids as $id) {
             if ($item = $this->model->withTrashed()->find($id)) {
@@ -18,23 +17,25 @@ trait SoftDeleteFunctions
         return $this->queryResult($request->all());
     }
 
-    public function restore(Request $request)
+    public function restore(SoftDeleteRequest $request)
     {
         foreach ($request->ids as $id) {
             if ($item = $this->model->withTrashed()->find($id)) {
                 $item->restore();
             }
         }
+
         return $this->queryResult($request->all());
     }
 
-    public function forceDelete(Request $request)
+    public function forceDelete(SoftDeleteRequest $request)
     {
         foreach ($request->ids as $id) {
             if ($item = $this->model->withTrashed()->find($id)) {
                 $item->forceDelete();
             }
         }
+
         return $this->queryResult($request->all());
     }
 }
