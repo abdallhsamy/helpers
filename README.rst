@@ -41,6 +41,19 @@ Add ``AbdallhSamy\Helpers\Providers\MigrationServiceProvider::class`` to your ap
 Config File and Migrations
 --------------------------
 
+Publish package config file and migrations with the following command:
+
+.. code-block:: bash
+
+    php artisan vendor:publish --provider="AbbdallhSamy\Helpers\Providerw\HelperServiceProvider"
+
+Then run migrations:
+
+.. code-block:: bash
+
+    php artisan migrate
+
+
 Traits and Contracts
 --------------------
 
