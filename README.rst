@@ -41,3 +41,28 @@ Add ``AbdallhSamy\Helpers\Providers\MigrationServiceProvider::class`` to your ap
 Config File and Migrations
 --------------------------
 
+Traits and Contracts
+--------------------
+
+Add ``AbdallhSamy\Helpers\Traits\Models\{ActivityLogTrait, ModelFilters, ModelSearch} `` trait to your model.
+
+See the following example:
+
+.. code-block:: php
+
+    namespace App\Models;
+
+    use Illuminate\Foundation\Auth\User as Authenticatable;
+    use AbdallhSamy\Helpers\Traits\Models\{ActivityLogTrait, ModelFilters, ModelSearch};
+    class User extends Authenticatable
+    {
+        use ActivityLogTrait, ModelFilters, ModelSearch;
+
+        protected $filterItems = [];
+        protected $searchItems = [];
+        
+        ...
+
+
+
+
