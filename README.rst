@@ -11,10 +11,10 @@ benefits of using package
 * use pagination , filter and search without modifing  controller methods or route params . **ex** : ``/api/v1/users/search=Abdallah&age=27&country_id=27&limit=15``
  which  @param ``search`` for search ,
  @param ``age`` for filtering
- @param ``country_id`` for filtering
-and @param  ``limit`` for pagination
+ @param ``country_id`` for filtering and @param  ``limit`` for pagination
 
-## installation
+Installation
+=====
 
 using Composer
 --------
