@@ -84,44 +84,47 @@ See the following model example:
 Controller
 ---------
 
-.. code-block
 
-<?php
+.. code-block:: php
 
-namespace App\Http\Controllers\API\V1;
+   <?php
 
-use App\Models\User;
-use App\Http\Controllers\Controller;
-use AbdallhSamy\Helpers\{Contracts\EnhancedQueryInterface, Traits\Controllers\EnhancedQuery};
+    namespace App\Http\Controllers\API\V1;
 
-class UserAPIController extends Controller implements EnhancedQueryInterface
-{
-    use EnhancedQuery;
+    use App\Models\User;
+    use App\Http\Controllers\Controller;
+    use AbdallhSamy\Helpers\{Contracts\EnhancedQueryInterface, Traits\Controllers\EnhancedQuery};
 
-    private $model;
-
-    public function __construct()
+    class UserAPIController extends Controller implements EnhancedQueryInterface
     {
-        $this->model = User::latest();
-    }
+        use EnhancedQuery;
 
-    /**
-    * must be implemented
-    */
-    public function collection($users)
-    {
-        return new VehicleCollection($users);
-    }
+        private $model;
 
-    /**
-     * Display a listing of the resource.
-     * @param Request $request
-     * mixed
-     * @return mixed
-     */
-    public function index(Request $request)
-    {
-        return $this->queryResult($request->all());
-    }
+        public function __construct()
+        {
+            $this->model = User::latest();
+        }
+
+        /**
+        * must be implemented
+        */
+        public function collection($users)
+        {
+            return new VehicleCollection($users);
+        }
+
+        /**
+        * Display a listing of the resource.
+        * @param Request $request
+        * mixed
+        * @return ResourceCollection
+        */
+        public function index(Request $request)
+        {
+            return $this->queryResult($request->all());
+        }
+
+    ...
 
 
