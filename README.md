@@ -17,7 +17,5 @@ and @param  `limit` for pagination
 using Composer
 --------
 
-.. code-block:: bash
-
     $ composer require abdallhsamy/helpers
 
