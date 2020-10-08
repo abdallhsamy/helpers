@@ -44,7 +44,7 @@ Config File and Migrations
 Traits and Contracts
 --------------------
 
-Add ``AbdallhSamy\Helpers\Traits\Models\{ActivityLogTrait, ModelFilters, ModelSearch} `` trait to your model.
+Add ``AbdallhSamy\Helpers\Traits\Models\{ActivityLogTrait, ModelFilters, ModelSearch}`` traits to your model.
 
 See the following example:
 
