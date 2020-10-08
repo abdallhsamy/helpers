@@ -14,7 +14,7 @@ trait SoftDeleteFunctions
             }
         }
 
-        return $this->queryResult($request->all());
+        return $this->query($request->all());
     }
 
     public function restore(SoftDeleteRequest $request)
@@ -25,7 +25,7 @@ trait SoftDeleteFunctions
             }
         }
 
-        return $this->queryResult($request->all());
+        return $this->query($request->all());
     }
 
     public function forceDelete(SoftDeleteRequest $request)
@@ -36,6 +36,6 @@ trait SoftDeleteFunctions
             }
         }
 
-        return $this->queryResult($request->all());
+        return $this->query($request->all());
     }
 }

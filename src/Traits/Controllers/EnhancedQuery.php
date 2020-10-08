@@ -2,6 +2,11 @@
 
 namespace AbdallhSamy\Helpers\Traits\Controllers;
 
+/**
+ * Trait EnhancedQuery
+ * @package AbdallhSamy\Helpers\Traits\Controllers
+ * @method collection  @see AbdallhSamy\Helpers\Contracts\EnhancedQueryInterface
+ */
 trait EnhancedQuery
 {
     /**
@@ -10,7 +15,7 @@ trait EnhancedQuery
      * @param array|mixed $data Request::all()
      * @return mixed
      */
-    public function queryResult($data)
+    public function query($data)
     {
         $result = $this->model->filter($data);
 

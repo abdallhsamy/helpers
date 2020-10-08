@@ -123,7 +123,7 @@ Controller
         */
         public function index(Request $request)
         {
-            return $this->queryResult($request->all());
+            return $this->query($request->all());
         }
 
     ...
