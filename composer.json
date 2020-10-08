@@ -21,9 +21,16 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "AbdallhSamy\\Helpers\\": "src/"
         }
+    },
+    "laravel": {
+        "providers": [
+            "AbdallhSamy\\Helpers\\Providers\\HelperServiceProvider",
+            "AbdallhSamy\\Helpers\\Providers\\MigrationServiceProvider"
+        ]
     }
 }
