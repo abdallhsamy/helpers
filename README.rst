@@ -17,5 +17,25 @@ and @param  `limit` for pagination
 using Composer
 --------
 
+.. code-block:: bash
+
     $ composer require abdallhsamy/helpers
+
+
+Service Provider
+----------------
+
+Add ``AbdallhSamy\Helpers\Providers\MigrationServiceProvider::class`` to your application service providers file: ``config/app.php``.
+
+.. code-block:: php
+
+    'providers' => [
+        /**
+         * Third Party Service Providers...
+         */
+        AbdallhSamy\Helpers\Providers\MigrationServiceProvider::class,
+    ]
+
+Config File and Migrations
+--------------------------
 
