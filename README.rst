@@ -45,7 +45,7 @@ Publish package config file and migrations with the following command:
 
 .. code-block:: bash
 
-    php artisan vendor:publish --provider="AbbdallhSamy\Helpers\Providerw\HelperServiceProvider"
+    php artisan vendor:publish --provider="AbbdallhSamy\Helpers\Providers\HelperServiceProvider"
 
 Then run migrations:
 
