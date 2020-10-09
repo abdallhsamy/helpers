@@ -15,6 +15,30 @@ benefits of using package
   * @param ``country_id`` for filtering
   * and @param  ``limit`` for pagination
 
+Migration Directory Example
+--------------------------
+
+```
+├── migrations
+│   ├── Employees
+│   │   ├── 2020_07_13_002708_create_xxxxx_table.php
+│   ├── General
+│   │   ├── 2020_06_25_094724_create_xxxxxx_table.php
+│   │   ├── 2020_06_25_154805_create_xxxxxx_table.php
+│   ├── Library
+│   │   ├── 2020_07_12_131550_create_xxxxxx_table.php
+│   │   ├── 2020_07_13_160900_create_xxxxxx_table.php
+│   │   ├── 2020_07_13_160903_create_xxxxxx_table.php
+│   │   └── 2020_07_13_160904_create_xxxxxx_table.php
+│   └── Users
+│       ├── 2020_06_14_145802_create_xxxxxx_table.php
+│       ├── 2020_06_14_145803_create_xxxxxx_table.php
+│       ├── 2020_06_15_110700_create_xxxxxx_table.php
+│       └── 2020_08_30_132633_create_xxxxxx_table.php
+└── seeds
+
+```
+
 Installation
 =====
 
