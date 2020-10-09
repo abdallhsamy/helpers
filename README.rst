@@ -118,6 +118,7 @@ Controller
 
     use App\Models\User;
     use App\Http\Controllers\Controller;
+    use App\Http\Requests\User\UserCollection;
     use AbdallhSamy\Helpers\{Contracts\EnhancedQueryInterface, Traits\Controllers\EnhancedQuery};
 
     class UserAPIController extends Controller implements EnhancedQueryInterface
@@ -136,7 +137,7 @@ Controller
         */
         public function collection($users)
         {
-            return new VehicleCollection($users);
+            return new UserCollection($users);
         }
 
         /**
