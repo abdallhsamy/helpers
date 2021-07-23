@@ -2,6 +2,7 @@
 
 namespace AbdallhSamy\Helpers\Providers;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
@@ -21,6 +22,8 @@ class HelperServiceProvider extends ServiceProvider
                 __DIR__ . '/../database/migrations/create_activity_log_table.php.stub' => $this->getMigrationFileName($filesystem)
             ], 'migrations');
         }
+
+        $this->addToRawSql();
     }
 
     function register()
@@ -50,5 +53,16 @@ class HelperServiceProvider extends ServiceProvider
                 return $filesystem->glob($path  . "*_{$fileName}");
             })->push($this->app->databasePath() . "/migrations/{$timestamp}_{$fileName}")
             ->first();
+    }
+
+    protected function addToRawSql()
+    {
+        Builder::macro('toRawSql', function () {
+            return array_reduce($this->getBindings(), function($sql, $binding) {
+                return preg_replace('/\?/', is_numeric($binding)
+                ? $binding
+                : "'" . $binding . "'", $sql, 1);
+            }, $this->toSql());
+        });
     }
 }

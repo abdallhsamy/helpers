@@ -3,7 +3,7 @@
     "description": "A Package contains some useful classes to help you develop faster",
     "type": "library",
     "require": {
-        "php" : "^7.4",
+        "php" : "^7.4|^8.0",
         "illuminate/container": "^8.0",
         "illuminate/contracts": "^8.0",
         "illuminate/database": "^8.0"
