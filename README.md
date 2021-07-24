@@ -46,7 +46,7 @@ using Composer
 --------
 
 ```bash
-$ composer require abdallhsamy/helpers
+composer require abdallhsamy/helpers
 ```
 
 Service Provider
