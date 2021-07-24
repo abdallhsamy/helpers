@@ -10,3 +10,6 @@ All notable changes to `helpers` will be documented in this file
 - Added PHP 8 support
 - Added `toRawSql()` method to Eloquent Builder
 - use `md` extension instead of `rst` for README file
+
+## 1.2.0 - 2021-07-24
+- Added Auto Discovery

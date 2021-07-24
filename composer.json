@@ -17,7 +17,8 @@
     "authors": [
         {
             "name": "Abdallah Samy",
-            "email": "abdallhsamy2011@gmail.com"
+            "email": "abdallhsamy2011@gmail.com",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "dev",
@@ -27,10 +28,12 @@
             "AbdallhSamy\\Helpers\\": "src/"
         }
     },
-    "laravel": {
-        "providers": [
-            "AbdallhSamy\\Helpers\\Providers\\HelperServiceProvider",
-            "AbdallhSamy\\Helpers\\Providers\\MigrationServiceProvider"
-        ]
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AbdallhSamy\\Helpers\\Providers\\HelperServiceProvider",
+                "AbdallhSamy\\Helpers\\Providers\\MigrationServiceProvider"
+            ]
+        }
     }
 }

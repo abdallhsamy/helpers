@@ -46,24 +46,9 @@ using Composer
 --------
 
 ```bash
-$ composer require abdallhsamy/helpers
+composer require abdallhsamy/helpers
 ```
 
-Service Provider
-----------------
-
-Add ``AbdallhSamy\Helpers\Providers\MigrationServiceProvider::class`` to your application service providers file: ``config/app.php``.
-
-```php
-
-'providers' => [
-    /**
-     * Third Party Service Providers...
-     */
-    AbdallhSamy\Helpers\Providers\HelperServiceProvider::class,
-    AbdallhSamy\Helpers\Providers\MigrationServiceProvider::class,
-]
-```
 Config File and Migrations
 --------------------------
 
@@ -152,6 +137,8 @@ class UserAPIController extends Controller implements EnhancedQueryInterface
 ```
 
 new Eloquent Builder Method `toRawSql()` Added
+
+
  usage example : 
 ```php
 return Recipe::select('dish_id', 'id')
